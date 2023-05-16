@@ -1,5 +1,6 @@
 import configparser
 import csv
+import os
 import pandas as pd
 import requests
 import yaml
@@ -215,4 +216,35 @@ class GbconnectedDk:
                                 desc= 'Procesando',
                                 total=len(all_data),
                                 ncols = 100))
+        print('Archivo generado')
+        
+
+    def combinar_csv(self, directorio):
+        """
+        Combina los archivos csv del directorio especificado en uno, generando una columna nueva
+        con el nombre del archivo
+        
+        Args:
+        directorio(str): Directorio donde estan los archivos a combinar
+        """
+        # Lista para almacenar los dataframes
+        dataframes = []
+
+        # Recorre todos los archivos en el directorio
+        for nombre_archivo in os.listdir(directorio):
+            # Verifica si el archivo es un csv
+            if nombre_archivo.endswith('.csv'):
+                # Crea la ruta completa al archivo
+                ruta_archivo = os.path.join(directorio, nombre_archivo)
+                # Lee el archivo csv en un dataframe
+                df = pd.read_csv(ruta_archivo)
+                # Agrega una nueva columna con el nombre del archivo (sin la extensión)
+                df['archivo'] = os.path.splitext(nombre_archivo)[0]
+                df = df[['archivo'] + [col for col in df.columns if col != 'archivo']]
+                # Agrega el dataframe a la lista
+                dataframes.append(df)
+
+        # Combina todos los dataframes en uno solo
+        combined_df = pd.concat(dataframes, axis=0, ignore_index=True)
+        combined_df.to_csv(f"Archivo_{directorio}_combinado.csv", index=False)
         print('Archivo generado')
