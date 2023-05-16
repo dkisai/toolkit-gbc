@@ -1,0 +1,15 @@
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+Merge/
+Local/
+Historico/
+config.ini
+.idea
+.ipynb_checkpoints
+.DS_Store
+.idea/
+.ipynb_checkpoints/
+
