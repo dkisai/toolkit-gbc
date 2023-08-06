@@ -127,7 +127,7 @@ class GbconnectedDk:
         Verifica la versión de todas las plantas listadas en el archivo 'plantas2.yaml'.
         """
         self._create_doc()
-        all_data = self._read_yaml_file("plantas.yaml")        
+        all_data = self._read_yaml_file("lib/plantas.yaml")        
         with ThreadPoolExecutor(max_workers=10) as executor:
             results = list(tqdm(executor.map(self._get_version, all_data),
                                 desc= 'Procesando',
@@ -157,7 +157,6 @@ class GbconnectedDk:
             result_df = pd.read_sql(query, con=engine)
             result_df.to_csv(f'Local/{planta[1]}.csv', index=False, encoding='utf-8')
         except Exception as e:
-            print(e)
             result_df_win = pd.read_sql(query, con=engine_win)
             result_df_win.to_csv(f'Local/{planta[1]}.csv', index=False, encoding='utf-8')
 
@@ -169,7 +168,7 @@ class GbconnectedDk:
         Args:
             query (str): Consulta SQL a ejecutar.
         """
-        all_data = self._read_yaml_file("plantas.yaml")
+        all_data = self._read_yaml_file("lib/plantas.yaml")
         with ThreadPoolExecutor(max_workers=10) as executor:
             results = list(tqdm(executor.map(self._get_query_local, all_data, [query] * len(all_data)),
                                 desc='Procesando',
@@ -210,7 +209,7 @@ class GbconnectedDk:
         Args:            
         query (str): Consulta SQL a ejecutar.
         """
-        all_data = self._read_yaml_file("rds_plantas.yaml")
+        all_data = self._read_yaml_file("lib/rds_plantas.yaml")
         with ThreadPoolExecutor(max_workers=10) as executor:
             results = list(tqdm(executor.map(self._get_query_rds, all_data, [query] * len(all_data)),
                                 desc= 'Procesando',

@@ -21,3 +21,4 @@ dependencies:
   - urllib3
   - jupyter_client
   - libprotobuf
+  - psycopg2
