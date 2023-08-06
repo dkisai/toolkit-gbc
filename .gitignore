@@ -4,9 +4,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.pem
-Local/
+Local/*.csv
 Shell/
-Historico/
+Historico/*.csv
+Test/
 config.ini
 Dockerfile
 .idea
@@ -14,4 +15,3 @@ Dockerfile
 .DS_Store
 .idea/
 .ipynb_checkpoints/
-
