@@ -28,8 +28,6 @@ Windows:
     - 'Bimbo Tenjo II'
   - - 172.29.2.152
     - 'Barcel Laguna'
-  - - 172.29.2.166
-    - 'Las Mercedes'
   - - 172.29.2.184
     - 'Bimbo Valladolid'
   - - 172.29.2.189
@@ -52,6 +50,8 @@ Asia:
   - - 16.163.109.223
     - 'Bimbo South Korea'
 Docker:
+  - - 172.29.2.166
+    - 'Las Mercedes'
   - - 172.29.2.185
     - 'BMS BIMBO MEXICO SANTA MARIA'
   - - 172.29.45.109

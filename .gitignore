@@ -3,9 +3,12 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.pem
 Local/
+Shell/
 Historico/
 config.ini
+Dockerfile
 .idea
 .ipynb_checkpoints
 .DS_Store
