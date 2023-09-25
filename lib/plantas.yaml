@@ -1,4 +1,40 @@
 Oracle:
+  - - 172.29.45.45
+    - 'SM SUANDY MEXICO'
+  - - 172.29.2.174
+    - 'BMA BIMBO MEXICO AZCAPOTZALCO'
+  - - 172.29.45.55
+    - 'BT BIMBO TOLUCA'
+  - - 172.29.45.50
+    - 'BTI BIMBO TIJUANA'
+  - - 172.29.45.113
+    - 'BBC BIMBO BAJA CALIFORNIA'
+  - - 172.29.45.59
+    - 'BCH BIMBO CHIHUAHUA'
+  - - 172.29.2.158
+    - 'TR TIA ROSA'
+  - - 172.29.45.75
+    - 'SS SANISSIMO'
+  - - 172.29.2.165
+    - 'MM MARINELA MEXICO'
+  - - 172.29.45.80
+    - 'MN MARINELA NORTE'
+  - - 172.29.48.155
+    - 'MN MARINELA NORTE 2'
+  - - 172.29.45.99
+    - 'BN BIMBO NORTE'  
+  - - 172.29.45.123
+    - 'BW BIMBO NOROESTE'
+  - - 172.29.45.85
+    - 'HZ HAZPAN L CONTINUAS'
+  - - 172.29.45.106
+    - 'BTJ BIMBO TEPEJI'
+  - - 172.29.45.62
+    - 'GM GABI MEXICO'
+  - - 172.29.45.10
+    - 'GLO EL GLOBO'
+  - - 172.29.2.185
+    - 'BMS BIMBO MEXICO SANTA MARIA'
   - - 172.29.2.149
     - 'BPU BIMBO PUEBLA'
   - - 172.29.45.96
@@ -28,10 +64,6 @@ Windows:
     - 'Bimbo Tenjo II'
   - - 172.29.2.152
     - 'Barcel Laguna'
-  - - 172.29.2.184
-    - 'Bimbo Valladolid'
-  - - 172.29.2.189
-    - 'Quito'
 Asia:
   - - 18.166.78.66
     - 'Bimbo Tianjin'
@@ -50,16 +82,16 @@ Asia:
   - - 16.163.109.223
     - 'Bimbo South Korea'
 Docker:
+  - - 172.29.2.184
+    - 'Bimbo Valladolid'
+  - - 172.29.2.189
+    - 'Quito'
   - - 172.29.2.166
     - 'Las Mercedes'
-  - - 172.29.2.185
-    - 'BMS BIMBO MEXICO SANTA MARIA'
   - - 172.29.45.109
     - 'Bimbo Santiago'
   - - 172.29.2.155
     - 'Guadalajara B'
-  - - 172.29.2.174
-    - 'BMA BIMBO MEXICO AZCAPOTZALCO'
   - - 172.29.2.187
     - 'Trillium Plant'
   - - 172.29.45.28
@@ -70,16 +102,12 @@ Docker:
     - 'Barcel Mexicali'
   - - 172.29.2.150
     - 'Barcel Atitalaquia'
-  - - 172.29.45.45
-    - 'SM SUANDY MEXICO'
   - - 172.29.2.148
     - 'Tenjo 1'
   - - 172.29.45.105
     - 'Barcel Coppell'
   - - 172.29.45.82
     - 'Bimbo Guayaquil'
-  - - 172.29.45.55
-    - 'BT BIMBO TOLUCA'
   - - 172.29.2.151
     - 'Bimbo Peru'
   - - 172.29.45.29
@@ -100,26 +128,16 @@ Docker:
     - 'Bimbo Hamilton'
   - - 172.29.45.43
     - 'Ohio Airport'
-  - - 172.29.45.113
-    - 'BBC BIMBO BAJA CALIFORNIA'
   - - 172.29.45.22
     - 'Bimbo Viau'
   - - 172.29.45.124
     - 'Bimbo Fleury'
-  - - 172.29.45.50
-    - 'BTI BIMBO TIJUANA'
-  - - 172.29.2.158
-    - 'TR TIA ROSA'
   - - 172.29.45.44 
     - 'Ohio EastPointe'
-  - - 172.29.45.59
-    - 'BCH BIMBO CHIHUAHUA'
   - - 172.29.45.121
     - 'Bimbo Calgary'
   - - 172.29.45.115
     - 'Bimbo Solares'
-  - - 172.29.45.75
-    - 'SS SANISSIMO'
   - - 172.29.45.8
     - 'Bimbo Zaragoza'
   - - 172.29.2.156
@@ -140,20 +158,10 @@ Docker:
     - 'Bimbo Rivermede'
   - - 172.29.45.114
     - 'Vachon Canada'
-  - - 172.29.2.165
-    - 'MM MARINELA MEXICO'
-  - - 172.29.45.80
-    - 'MN MARINELA NORTE'
-  - - 172.29.48.155
-    - 'MN MARINELA NORTE 2'
   - - 172.29.45.92
     - 'Bimbo Dandurand'
   - - 172.29.45.81
     - 'Bimbo Santa Perpetua'
-  - - 172.29.45.99
-    - 'BN BIMBO NORTE'  
-  - - 172.29.45.123
-    - 'BW BIMBO NOROESTE'
   - - 172.29.45.98
     - 'Bimbo Puente Genil'  
   - - 172.29.45.36
@@ -190,18 +198,12 @@ Docker:
     - 'Bimbo Raposo'
   - - 172.29.45.122
     - 'Bimbo El Salvador'
-  - - 172.29.45.85
-    - 'HZ HAZPAN L CONTINUAS'
   - - 172.29.45.117
     - 'Bimbo Paterna'
   - - 172.29.45.72
     - 'Bimbo Cali'
-  - - 172.29.45.106
-    - 'BTJ BIMBO TEPEJI'
   - - 172.29.45.61
     - 'Bimbo Medellin'
-  - - 172.29.45.62
-    - 'GM GABI MEXICO'
   - - 172.29.45.100
     - 'Bimbo Barranquilla'
   - - 172.29.45.116
@@ -212,8 +214,6 @@ Docker:
     - 'Bimbo Villa Tesei'
   - - 172.29.45.108
     - 'Bimbo Viceroy'
-  - - 172.29.45.10
-    - 'GLO EL GLOBO'
   - - 172.29.48.21
     - 'Bimbo Valente'
   - - 172.29.48.4
@@ -222,4 +222,3 @@ Docker:
     - 'Bimbo Aix'
   - - 172.29.45.83
     - 'Bimbo Ukraine'
-    

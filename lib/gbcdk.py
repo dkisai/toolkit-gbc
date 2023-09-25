@@ -16,7 +16,7 @@ class GbconnectedDk:
     Clase para agilizar el trabajo de soporte N2 en Gbconnected.
     """
 
-    
+
     def __init__(self):
         """
         Inicializa la instancia leyendo la configuración desde un archivo 'config.ini'.
@@ -24,7 +24,7 @@ class GbconnectedDk:
         self._config = configparser.ConfigParser()
         self._config.read('config.ini')
 
-    
+
     def _create_doc(self):
         """
         Crea un archivo CSV con cabeceras para almacenar información sobre las plantas.
@@ -34,8 +34,8 @@ class GbconnectedDk:
             csv_writer = csv.writer(file)
             csv_writer.writerow(header)
             file.close()
-        
-    
+
+
     def _write_data(self, text):
         """
         Agrega una línea de texto al archivo CSV del día actual.
@@ -92,17 +92,25 @@ class GbconnectedDk:
             self._write_data(text)
 
 
-    def erase_cache(self, ip):
+    def erase_cache(self, ips=None):
         """
-        Borra la caché de la planta.
+        Borra la caché de las plantas.
 
         Args:
-            ip (str): Dirección IP de la planta.
+            ips (str or list of str): Dirección IP o lista de direcciones IP de las plantas.
         """
-        s, url = self._prepare_session(ip)
-        s.get(f'{url}actuator/eliminacioncache')
-        print('Borrado de cache listo')
+        if ips is None:
+            print('No se proporcionaron direcciones IP. No se realizará ninguna operación.')
+            return
+        
+        if isinstance(ips, str):
+            ips = [ips]  # Convertir una sola dirección IP en una lista de una sola entrada
     
+        for ip in ips:
+            s, url = self._prepare_session(ip)
+            s.get(f'{url}actuator/eliminacioncache')
+            print(f'Borrado de cache listo para la planta con IP {ip}')
+
 
     def _read_yaml_file(self, file_path):
         """
@@ -129,7 +137,7 @@ class GbconnectedDk:
         self._create_doc()
         all_data = self._read_yaml_file("lib/plantas.yaml")        
         with ThreadPoolExecutor(max_workers=10) as executor:
-            results = list(tqdm(executor.map(self._get_version, all_data),
+            list(tqdm(executor.map(self._get_version, all_data),
                                 desc= 'Procesando',
                                 total=len(all_data),
                                 ncols = 100))
@@ -216,13 +224,13 @@ class GbconnectedDk:
                                 total=len(all_data),
                                 ncols = 100))
         print('Archivo generado')
-        
+
 
     def combinar_csv(self, directorio):
         """
         Combina los archivos csv del directorio especificado en uno, generando una columna nueva
         con el nombre del archivo
-        
+
         Args:
         directorio(str): Directorio donde estan los archivos a combinar
         """
