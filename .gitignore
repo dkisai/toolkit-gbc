@@ -10,6 +10,7 @@ Historico/*.csv
 Test/
 config.ini
 Dockerfile
+docker-compose.yml
 .idea
 .ipynb_checkpoints
 .DS_Store

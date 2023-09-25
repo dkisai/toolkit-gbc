@@ -46,8 +46,8 @@ class GbconnectedDk:
         with open(str(date.today()) + '.csv', 'a', newline='') as write_obj:
             csv_writer2 = csv.writer(write_obj)
             csv_writer2.writerow(text)
-        
-        
+
+
     def _prepare_session(self, ip):
         """
         Prepara una sesión HTTP para interactuar con la planta.
@@ -62,7 +62,7 @@ class GbconnectedDk:
         passwd = self._config.get('sc', 'passwd')
         url = f'http://{ip}:8080/gbconnected/'
         s = requests.session()
-        csrf_token = s.get(url).cookies['XSRF-TOKEN']
+        csrf_token = s.get(url, timeout=2).cookies['XSRF-TOKEN']
         login_payload = {
             '_csrf': csrf_token,
             'username': user,
@@ -90,17 +90,17 @@ class GbconnectedDk:
         except Exception:
             text = 'ERROR', ip[1], ip[0]
             self._write_data(text)
-        
-        
+
+
     def erase_cache(self, ip):
         """
         Borra la caché de la planta.
 
         Args:
             ip (str): Dirección IP de la planta.
-        """        
+        """
         s, url = self._prepare_session(ip)
-        s.get(f'{url}actuator/eliminacioncache').text
+        s.get(f'{url}actuator/eliminacioncache')
         print('Borrado de cache listo')
     
 
@@ -170,7 +170,7 @@ class GbconnectedDk:
         """
         all_data = self._read_yaml_file("lib/plantas.yaml")
         with ThreadPoolExecutor(max_workers=10) as executor:
-            results = list(tqdm(executor.map(self._get_query_local, all_data, [query] * len(all_data)),
+            list(tqdm(executor.map(self._get_query_local, all_data, [query] * len(all_data)),
                                 desc='Procesando',
                                 total=len(all_data),
                                 ncols=100))
@@ -211,7 +211,7 @@ class GbconnectedDk:
         """
         all_data = self._read_yaml_file("lib/rds_plantas.yaml")
         with ThreadPoolExecutor(max_workers=10) as executor:
-            results = list(tqdm(executor.map(self._get_query_rds, all_data, [query] * len(all_data)),
+            list(tqdm(executor.map(self._get_query_rds, all_data, [query] * len(all_data)),
                                 desc= 'Procesando',
                                 total=len(all_data),
                                 ncols = 100))

@@ -143,7 +143,9 @@ Docker:
   - - 172.29.2.165
     - 'MM MARINELA MEXICO'
   - - 172.29.45.80
-    - 'MN MARINELA NORTE'  
+    - 'MN MARINELA NORTE'
+  - - 172.29.48.155
+    - 'MN MARINELA NORTE 2'
   - - 172.29.45.92
     - 'Bimbo Dandurand'
   - - 172.29.45.81
